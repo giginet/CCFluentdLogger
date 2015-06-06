@@ -7,6 +7,7 @@
 //
 
 #include "CCFluentdMacros.h"
+#include "cocos2d.h"
 
 #ifndef __CCFluentdLogger__Logger__
 #define __CCFluentdLogger__Logger__
