@@ -1,0 +1,1 @@
+fluentd: bundle exec fluentd -c config/fluend.conf
