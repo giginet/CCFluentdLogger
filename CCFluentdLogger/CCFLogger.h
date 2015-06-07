@@ -25,19 +25,11 @@ struct Configuration {
     bool isBufferingEnabled;
 };
 
-Configuration getDefaultConfigratinon()
-{
-    Configuration config;
-    config.host = "127.0.0.1";
-    config.port = 8888;
-    config.isBufferingEnabled = false;
-    return std::move(config);
-}
-
 class Logger {
 public:
     Logger();
     virtual ~Logger();
+    static Configuration getDefaultConfiguration();
     static Logger * getInstance();
     static void purgeLogger();
     void setConfiguration(Configuration &config);

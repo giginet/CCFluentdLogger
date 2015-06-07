@@ -26,6 +26,7 @@ Log::Log(const char* tag, json11::Json json)
 , _timestamp(time(0))
 , _json(json)
 {
+    _json = json;
 }
 
 Log::~Log()

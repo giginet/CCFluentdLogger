@@ -20,6 +20,16 @@ Logger* Logger::getInstance()
     return _instance;
 }
 
+Configuration Logger::getDefaultConfiguration()
+{
+    
+    Configuration config;
+    config.host = "http://127.0.0.1";
+    config.port = 8888;
+    config.isBufferingEnabled = false;
+    return std::move(config);
+}
+
 Logger::Logger()
 : _connector(nullptr)
 , _buffer(nullptr)
@@ -51,11 +61,10 @@ void Logger::setConfiguration(ccFluentdLogger::Configuration &config)
 bool Logger::registerLog(const char *tag, json11::Json obj)
 {
     Log *log = Log::create(tag, obj);
-    if (_configuration.isBufferingEnabled) {
-        _buffer->addBuffer(log);
-    } else {
-        this->postLog(log);
-        return true;
+    _buffer->addBuffer(log);
+    
+    if (!_configuration.isBufferingEnabled) {
+        this->postBuffer();
     }
     return false;
 }
@@ -66,7 +75,6 @@ size_t Logger::postBuffer()
     for (auto log : _buffer->getLogs()) {
         this->postLog(log);
     }
-    _buffer->flush();
     return num;
 }
 
@@ -90,9 +98,10 @@ void Logger::postLog(Log * log)
     connector->post(log,
                     [this, log](cocos2d::network::HttpClient* client, cocos2d::network::HttpResponse* response) {
                         if (response->isSucceed()) {
-                            cocos2d::log("Post succeed");
+                            cocos2d::log("Post succeed %s", log->dump().c_str());
+                            _buffer->getLogs().eraseObject(log);
                         } else {
-                            cocos2d::log("Post failed");
+                            cocos2d::log("Post failed %s", log->dump().c_str());
                             _buffer->addBuffer(log);
                         }
                     });
