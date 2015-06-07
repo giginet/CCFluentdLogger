@@ -15,7 +15,7 @@
 
 NS_LOGGER_BEGIN
 
-#define LogDict cocos2d::Map<std::string, cocos2d::Value>
+//#define LogDict cocos2d::Map<std::string, cocos2d::Value>
 
 class Log :public cocos2d::Ref {
 CC_CONSTRUCTOR_ACCESS:

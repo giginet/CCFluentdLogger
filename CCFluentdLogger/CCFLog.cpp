@@ -21,8 +21,8 @@ Log* Log::create(const char *tag, json11::Json json)
     return nullptr;
 }
 
-Log::Log(const char* key, json11::Json json)
-: _tag("")
+Log::Log(const char* tag, json11::Json json)
+: _tag(tag)
 , _timestamp(time(0))
 , _json(json)
 {
@@ -39,7 +39,8 @@ bool Log::init()
 
 std::string Log::dump()
 {
-    return _json.dump();
+    auto dumped = _json.dump();
+    return cocos2d::StringUtils::format("json=%s", dumped.c_str());
 }
 
 NS_LOGGER_END

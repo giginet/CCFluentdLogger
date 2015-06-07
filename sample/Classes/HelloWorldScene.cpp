@@ -1,4 +1,6 @@
 #include "HelloWorldScene.h"
+#include "CCFluentdLogger.h"
+#include "json11.hpp"
 
 USING_NS_CC;
 
@@ -71,6 +73,13 @@ bool HelloWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
+    
+    ccFluentdLogger::Configuration config;
+    config.host = "http://127.0.0.1";
+    config.port = 8888;
+    auto logger = ccFluentdLogger::Logger::getInstance();
+    logger->setConfiguration(config);
+    logger->postLog("test", json11::Json::object {{"key", "value"}} );
     
     return true;
 }

@@ -23,7 +23,6 @@ Logger* Logger::getInstance()
 Logger::Logger()
 : _connector(nullptr)
 {
-    
 }
 
 Logger::~Logger()
@@ -39,12 +38,22 @@ void Logger::purgeLogger()
 void Logger::setConfiguration(ccFluentdLogger::Configuration &config)
 {
     _configuration = config;
+    if (_connector) {
+        _connector->setHost(config.host);
+        _connector->setPort(config.port);
+    }
 }
 
 bool Logger::postLog(const char *tag, json11::Json obj)
 {
     // Currently, logs are posted in realtime.
     // TODO buffering
+    
+    if (_connector == nullptr) {
+        _connector = Connector::create(_configuration.host.c_str(), _configuration.port);
+        _connector->retain();
+    }
+    
     Log *log = Log::create(tag, obj);
     _connector->post(log);
     return true;

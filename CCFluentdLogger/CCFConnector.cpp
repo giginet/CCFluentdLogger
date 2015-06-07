@@ -35,6 +35,8 @@ Connector::~Connector()
 
 bool Connector::init(const char *host, int port)
 {
+    _host = host;
+    _port = port;
     return true;
 }
 
@@ -45,6 +47,9 @@ bool Connector::post(ccFluentdLogger::Log *log)
     std::string url = this->getEndPoint(log->getTag().c_str());
     request->setUrl(url.c_str());
     request->setRequestType(HttpRequest::Type::POST);
+    auto dumped = log->dump().c_str();
+    request->setRequestData(dumped, strlen(dumped));
+
     request->setResponseCallback([this](HttpClient* client, HttpResponse* response){
         if (response->isSucceed()) {
             cocos2d::log("Succeed");
@@ -56,6 +61,8 @@ bool Connector::post(ccFluentdLogger::Log *log)
     auto client = HttpClient::getInstance();
     client->enableCookies(NULL);
     client->send(request);
+    
+    request->release();
     return true;
 }
 

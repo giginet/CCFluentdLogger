@@ -22,8 +22,8 @@ CC_CONSTRUCTOR_ACCESS:
     Connector();
     virtual ~Connector();
 private:
-    int _port;
-    std::string _host;
+    CC_SYNTHESIZE(std::string, _host, Host);
+    CC_SYNTHESIZE(int, _port, Port);
     std::string getEndPoint(const char* tag);
 public:
     static Connector* create(const char* host, int port);
