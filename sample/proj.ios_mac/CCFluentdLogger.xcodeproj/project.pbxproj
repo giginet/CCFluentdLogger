@@ -65,6 +65,18 @@
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		54E07C711B242BF700B70EB2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 54E07C6A1B242BF700B70EB2 /* .gitignore */; };
+		54E07C721B242BF700B70EB2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 54E07C6A1B242BF700B70EB2 /* .gitignore */; };
+		54E07C731B242BF700B70EB2 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54E07C6B1B242BF700B70EB2 /* json11.cpp */; };
+		54E07C741B242BF700B70EB2 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54E07C6B1B242BF700B70EB2 /* json11.cpp */; };
+		54E07C751B242BF700B70EB2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54E07C6D1B242BF700B70EB2 /* LICENSE.txt */; };
+		54E07C761B242BF700B70EB2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 54E07C6D1B242BF700B70EB2 /* LICENSE.txt */; };
+		54E07C771B242BF700B70EB2 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 54E07C6E1B242BF700B70EB2 /* Makefile */; };
+		54E07C781B242BF700B70EB2 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 54E07C6E1B242BF700B70EB2 /* Makefile */; };
+		54E07C791B242BF700B70EB2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 54E07C6F1B242BF700B70EB2 /* README.md */; };
+		54E07C7A1B242BF700B70EB2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 54E07C6F1B242BF700B70EB2 /* README.md */; };
+		54E07C7B1B242BF700B70EB2 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54E07C701B242BF700B70EB2 /* test.cpp */; };
+		54E07C7C1B242BF700B70EB2 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54E07C701B242BF700B70EB2 /* test.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -165,6 +177,13 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		54E07C6A1B242BF700B70EB2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		54E07C6B1B242BF700B70EB2 /* json11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json11.cpp; sourceTree = "<group>"; };
+		54E07C6C1B242BF700B70EB2 /* json11.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json11.hpp; sourceTree = "<group>"; };
+		54E07C6D1B242BF700B70EB2 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		54E07C6E1B242BF700B70EB2 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		54E07C6F1B242BF700B70EB2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		54E07C701B242BF700B70EB2 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -219,6 +238,7 @@
 		076D521B1B22F055004A1C0C /* CCFluentdLogger */ = {
 			isa = PBXGroup;
 			children = (
+				54E07C681B242BF700B70EB2 /* external */,
 				076D521C1B22F0BF004A1C0C /* CCFLogger.cpp */,
 				076D521D1B22F0BF004A1C0C /* CCFLogger.h */,
 				076D52201B22F0E1004A1C0C /* CCFluentdLogger.h */,
@@ -375,6 +395,29 @@
 			path = ios;
 			sourceTree = SOURCE_ROOT;
 		};
+		54E07C681B242BF700B70EB2 /* external */ = {
+			isa = PBXGroup;
+			children = (
+				54E07C691B242BF700B70EB2 /* json11 */,
+			);
+			name = external;
+			path = ../../CCFluentdLogger/external;
+			sourceTree = "<group>";
+		};
+		54E07C691B242BF700B70EB2 /* json11 */ = {
+			isa = PBXGroup;
+			children = (
+				54E07C6A1B242BF700B70EB2 /* .gitignore */,
+				54E07C6B1B242BF700B70EB2 /* json11.cpp */,
+				54E07C6C1B242BF700B70EB2 /* json11.hpp */,
+				54E07C6D1B242BF700B70EB2 /* LICENSE.txt */,
+				54E07C6E1B242BF700B70EB2 /* Makefile */,
+				54E07C6F1B242BF700B70EB2 /* README.md */,
+				54E07C701B242BF700B70EB2 /* test.cpp */,
+			);
+			path = json11;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -491,12 +534,14 @@
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
+				54E07C711B242BF700B70EB2 /* .gitignore in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				54E07C751B242BF700B70EB2 /* LICENSE.txt in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,8 +551,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				54E07C721B242BF700B70EB2 /* .gitignore in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
+				54E07C761B242BF700B70EB2 /* LICENSE.txt in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
@@ -521,13 +568,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E07C771B242BF700B70EB2 /* Makefile in Sources */,
 				076D522C1B22FBF2004A1C0C /* CCFConnector.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				076D52281B22F8A3004A1C0C /* CCFLog.cpp in Sources */,
+				54E07C731B242BF700B70EB2 /* json11.cpp in Sources */,
+				54E07C7B1B242BF700B70EB2 /* test.cpp in Sources */,
 				076D521E1B22F0BF004A1C0C /* CCFLogger.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				54E07C791B242BF700B70EB2 /* README.md in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,8 +590,12 @@
 				076D52291B22F8A3004A1C0C /* CCFLog.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				54E07C7C1B242BF700B70EB2 /* test.cpp in Sources */,
+				54E07C741B242BF700B70EB2 /* json11.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				076D522D1B22FBF2004A1C0C /* CCFConnector.cpp in Sources */,
+				54E07C7A1B242BF700B70EB2 /* README.md in Sources */,
+				54E07C781B242BF700B70EB2 /* Makefile in Sources */,
 				076D521F1B22F0BF004A1C0C /* CCFLogger.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

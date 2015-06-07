@@ -20,6 +20,17 @@ Logger* Logger::getInstance()
     return _instance;
 }
 
+Logger::Logger()
+: _connector(nullptr)
+{
+    
+}
+
+Logger::~Logger()
+{
+    CC_SAFE_RELEASE_NULL(_connector);
+}
+
 void Logger::purgeLogger()
 {
     CC_SAFE_DELETE(_instance);
@@ -28,6 +39,15 @@ void Logger::purgeLogger()
 void Logger::setConfiguration(ccFluentdLogger::Configuration &config)
 {
     _configuration = config;
+}
+
+bool Logger::postLog(const char *tag, json11::Json obj)
+{
+    // Currently, logs are posted in realtime.
+    // TODO buffering
+    Log *log = Log::create(tag, obj);
+    _connector->post(log);
+    return true;
 }
 
 NS_LOGGER_END

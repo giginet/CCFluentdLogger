@@ -9,5 +9,8 @@
 #ifndef CCFluentdLogger_CCFluentdLogger_h
 #define CCFluentdLogger_CCFluentdLogger_h
 
+#import "CCFLogger.h"
+#import "CCFLog.h"
+#import "CCFConnector.h"
 
 #endif

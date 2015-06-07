@@ -8,6 +8,10 @@
 
 #include "CCFluentdMacros.h"
 #include "cocos2d.h"
+#include "json11.hpp"
+
+#include "CCFConnector.h"
+
 
 #ifndef __CCFluentdLogger__Logger__
 #define __CCFluentdLogger__Logger__
@@ -21,12 +25,16 @@ struct Configuration {
 
 class Logger {
 public:
+    Logger();
+    virtual ~Logger();
     static Logger * getInstance();
     static void purgeLogger();
     void setConfiguration(Configuration &config);
+    bool postLog(const char* tag, json11::Json obj);
 private:
     Configuration _configuration;
     static Logger * _instance;
+    Connector * _connector;
 };
 
 NS_LOGGER_END
