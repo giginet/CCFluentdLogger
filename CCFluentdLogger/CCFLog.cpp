@@ -26,6 +26,9 @@ Log::Log(const char* tag, json11::Json json)
 , _timestamp(time(0))
 , _json(json)
 {
+    json11::Json::object obj =  std::move(_json.object_items());
+    obj.insert({"timestamp", json11::Json((int)_timestamp)});
+    _json = std::move(obj);
 }
 
 Log::~Log()
