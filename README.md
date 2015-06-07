@@ -110,6 +110,10 @@ void onGameOver()
 
 You can set default `postLog` behavior with `Configuration.isBufferingEnabled`.
 
+## Run sample project
+
+Copy 'cocos2d-x/cocos2d' to 'sample/' and open `CCFluentdLogger.xcodeproj`.
+
 ## Author
 
 giginet <giginet.net@gmail.com>
