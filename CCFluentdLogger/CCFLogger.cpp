@@ -22,12 +22,16 @@ Logger* Logger::getInstance()
 
 Logger::Logger()
 : _connector(nullptr)
+, _buffer(nullptr)
 {
+    _buffer = Buffer::create();
+    _buffer->retain();
 }
 
 Logger::~Logger()
 {
     CC_SAFE_RELEASE_NULL(_connector);
+    CC_SAFE_RELEASE_NULL(_buffer);
 }
 
 void Logger::purgeLogger()
@@ -44,19 +48,37 @@ void Logger::setConfiguration(ccFluentdLogger::Configuration &config)
     }
 }
 
-bool Logger::postLog(const char *tag, json11::Json obj)
+bool Logger::registerLog(const char *tag, json11::Json obj)
 {
-    // Currently, logs are posted in realtime.
-    // TODO buffering
-    
+    Log *log = Log::create(tag, obj);
+    if (_configuration.isBufferingEnabled) {
+        _buffer->addBuffer(log);
+    } else {
+        auto connector = this->getConnector();
+        connector->post(log);
+        return true;
+    }
+    return false;
+}
+
+size_t Logger::postBuffer()
+{
+    auto connector = this->getConnector();
+    size_t num = _buffer->getLogs().size();
+    for (auto log : _buffer->getLogs()) {
+        connector->post(log);
+    }
+    _buffer->flush();
+    return num;
+}
+
+Connector * Logger::getConnector()
+{
     if (_connector == nullptr) {
         _connector = Connector::create(_configuration.host.c_str(), _configuration.port);
         _connector->retain();
     }
-    
-    Log *log = Log::create(tag, obj);
-    _connector->post(log);
-    return true;
+    return _connector;
 }
 
 NS_LOGGER_END

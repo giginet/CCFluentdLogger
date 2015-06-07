@@ -79,7 +79,7 @@ bool HelloWorld::init()
     config.port = 8888;
     auto logger = ccFluentdLogger::Logger::getInstance();
     logger->setConfiguration(config);
-    logger->postLog("test", json11::Json::object {{"key", "value"}} );
+    logger->registerLog("test", json11::Json::object {{"key", "value"}} );
     
     return true;
 }

@@ -67,6 +67,8 @@
 		544832811B243ADD002A773E /* CCFLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5448326F1B243ADD002A773E /* CCFLogger.cpp */; };
 		544832841B243ADD002A773E /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 544832761B243ADD002A773E /* json11.cpp */; };
 		544832851B243ADD002A773E /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 544832761B243ADD002A773E /* json11.cpp */; };
+		54FB67091B24432C00CBAE7E /* CCFBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54FB67071B24432C00CBAE7E /* CCFBuffer.cpp */; };
+		54FB670A1B24432C00CBAE7E /* CCFBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54FB67071B24432C00CBAE7E /* CCFBuffer.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -169,6 +171,8 @@
 		544832721B243ADD002A773E /* CCFluentdMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFluentdMacros.h; sourceTree = "<group>"; };
 		544832761B243ADD002A773E /* json11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json11.cpp; sourceTree = "<group>"; };
 		544832771B243ADD002A773E /* json11.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json11.hpp; sourceTree = "<group>"; };
+		54FB67071B24432C00CBAE7E /* CCFBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCFBuffer.cpp; sourceTree = "<group>"; };
+		54FB67081B24432C00CBAE7E /* CCFBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFBuffer.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -373,6 +377,8 @@
 				5448326E1B243ADD002A773E /* CCFLog.h */,
 				5448326F1B243ADD002A773E /* CCFLogger.cpp */,
 				544832701B243ADD002A773E /* CCFLogger.h */,
+				54FB67071B24432C00CBAE7E /* CCFBuffer.cpp */,
+				54FB67081B24432C00CBAE7E /* CCFBuffer.h */,
 				544832711B243ADD002A773E /* CCFluentdLogger.h */,
 				544832721B243ADD002A773E /* CCFluentdMacros.h */,
 				544832731B243ADD002A773E /* external */,
@@ -546,6 +552,7 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				5448327E1B243ADD002A773E /* CCFLog.cpp in Sources */,
+				54FB67091B24432C00CBAE7E /* CCFBuffer.cpp in Sources */,
 				544832801B243ADD002A773E /* CCFLogger.cpp in Sources */,
 				544832841B243ADD002A773E /* json11.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
@@ -564,6 +571,7 @@
 				5448327D1B243ADD002A773E /* CCFConnector.cpp in Sources */,
 				544832811B243ADD002A773E /* CCFLogger.cpp in Sources */,
 				544832851B243ADD002A773E /* json11.cpp in Sources */,
+				54FB670A1B24432C00CBAE7E /* CCFBuffer.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
