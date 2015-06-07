@@ -58,12 +58,12 @@ void Logger::setConfiguration(ccFluentdLogger::Configuration &config)
     }
 }
 
-bool Logger::registerLog(const char *tag, json11::Json obj)
+bool Logger::postLog(const char *tag, json11::Json obj)
 {
-    return this->registerLog(tag, obj, _configuration.isBufferingEnabled);
+    return this->postLog(tag, obj, _configuration.isBufferingEnabled);
 }
 
-bool Logger::registerLog(const char *tag, json11::Json obj, bool isBuffering)
+bool Logger::postLog(const char *tag, json11::Json obj, bool isBuffering)
 {
     Log *log = Log::create(tag, obj);
     _buffer->addBuffer(log);

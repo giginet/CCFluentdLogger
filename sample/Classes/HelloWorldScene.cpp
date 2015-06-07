@@ -84,13 +84,13 @@ bool HelloWorld::init()
                                                                  "Helvetica",
                                                                  64),
                                      [this, logger](Ref * button) {
-                                         logger->registerLog("action", json11::Json::object {{"key", "value"}}, false);
+                                         logger->postLog("action", json11::Json::object {{"key", "value"}}, false);
                                      });
     auto tapBuffering = MenuItemLabel::create(Label::createWithSystemFont("Add Tap Event",
                                                                           "Helvetica",
                                                                           64),
                                               [this, logger](Ref * button) {
-                                                  logger->registerLog("action", json11::Json::object {{"key", "value"}});
+                                                  logger->postLog("action", json11::Json::object {{"key", "value"}});
                                               });
     auto send = MenuItemLabel::create(Label::createWithSystemFont("Send buffered",
                                                                   "Helvetica",

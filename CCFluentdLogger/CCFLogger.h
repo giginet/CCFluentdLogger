@@ -35,8 +35,8 @@ public:
     void setConfiguration(Configuration &config);
     size_t postBuffer();
     size_t getBufferdCount();
-    bool registerLog(const char* tag, json11::Json obj);
-    bool registerLog(const char* tag, json11::Json obj, bool isBuffering);
+    bool postLog(const char* tag, json11::Json obj);
+    bool postLog(const char* tag, json11::Json obj, bool isBuffering);
 private:
     Configuration _configuration;
     static Logger * _instance;
