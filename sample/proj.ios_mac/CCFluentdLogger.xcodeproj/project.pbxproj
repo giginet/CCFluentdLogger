@@ -11,6 +11,8 @@
 		076D521F1B22F0BF004A1C0C /* CCFLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076D521C1B22F0BF004A1C0C /* CCFLogger.cpp */; };
 		076D52281B22F8A3004A1C0C /* CCFLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076D52261B22F8A3004A1C0C /* CCFLog.cpp */; };
 		076D52291B22F8A3004A1C0C /* CCFLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076D52261B22F8A3004A1C0C /* CCFLog.cpp */; };
+		076D522C1B22FBF2004A1C0C /* CCFConnector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076D522A1B22FBF2004A1C0C /* CCFConnector.cpp */; };
+		076D522D1B22FBF2004A1C0C /* CCFConnector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 076D522A1B22FBF2004A1C0C /* CCFConnector.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -111,6 +113,8 @@
 		076D52211B22F15E004A1C0C /* CCFluentdMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCFluentdMacros.h; path = ../../CCFluentdLogger/CCFluentdMacros.h; sourceTree = "<group>"; };
 		076D52261B22F8A3004A1C0C /* CCFLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCFLog.cpp; path = ../../CCFluentdLogger/CCFLog.cpp; sourceTree = "<group>"; };
 		076D52271B22F8A3004A1C0C /* CCFLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCFLog.h; path = ../../CCFluentdLogger/CCFLog.h; sourceTree = "<group>"; };
+		076D522A1B22FBF2004A1C0C /* CCFConnector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCFConnector.cpp; path = ../../CCFluentdLogger/CCFConnector.cpp; sourceTree = "<group>"; };
+		076D522B1B22FBF2004A1C0C /* CCFConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCFConnector.h; path = ../../CCFluentdLogger/CCFConnector.h; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -221,6 +225,8 @@
 				076D52211B22F15E004A1C0C /* CCFluentdMacros.h */,
 				076D52261B22F8A3004A1C0C /* CCFLog.cpp */,
 				076D52271B22F8A3004A1C0C /* CCFLog.h */,
+				076D522A1B22FBF2004A1C0C /* CCFConnector.cpp */,
+				076D522B1B22FBF2004A1C0C /* CCFConnector.h */,
 			);
 			name = CCFluentdLogger;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076D522C1B22FBF2004A1C0C /* CCFConnector.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				076D52281B22F8A3004A1C0C /* CCFLog.cpp in Sources */,
 				076D521E1B22F0BF004A1C0C /* CCFLogger.cpp in Sources */,
@@ -533,6 +540,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				076D522D1B22FBF2004A1C0C /* CCFConnector.cpp in Sources */,
 				076D521F1B22F0BF004A1C0C /* CCFLogger.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
