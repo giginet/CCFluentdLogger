@@ -112,7 +112,9 @@ You can set default `postLog` behavior with `Configuration.isBufferingEnabled`.
 
 ## Run sample project
 
-Copy 'cocos2d-x/cocos2d' to 'sample/' and open `CCFluentdLogger.xcodeproj`.
+1. Create a new project with `cocos` command.
+2. Copy `newProj/cocos2d` to `sample/cocos2d`
+3. open `CCFluentdLogger.xcodeproj`.
 
 ## Author
 
