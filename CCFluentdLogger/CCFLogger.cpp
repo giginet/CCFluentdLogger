@@ -36,6 +36,8 @@ Logger::Logger()
 {
     _buffer = Buffer::create();
     _buffer->retain();
+    
+    _configuration = Logger::getDefaultConfiguration();
 }
 
 Logger::~Logger()
@@ -66,14 +68,14 @@ bool Logger::postLog(const char *tag, json11::Json obj)
 bool Logger::postLog(const char *tag, json11::Json obj, bool isBuffering)
 {
     Log *log = Log::create(tag, obj);
-    _buffer->addBuffer(log);
+    _buffer->addLog(log);
     if (!isBuffering) {
-        this->postBuffer();
+        this->postBuffered();
     }
     return false;
 }
 
-size_t Logger::postBuffer()
+size_t Logger::postBuffered()
 {
     size_t num = _buffer->getLogs().size();
     for (auto log : _buffer->getLogs()) {

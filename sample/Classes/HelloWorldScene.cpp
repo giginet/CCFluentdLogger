@@ -96,7 +96,7 @@ bool HelloWorld::init()
                                                                   "Helvetica",
                                                                   64),
                                       [this, logger](Ref * button) {
-                                          size_t num = logger->postBuffer();
+                                          size_t num = logger->postBuffered();
                                           cocos2d::log("Send %d buffered logs", (int)num);
                                       });
     auto loggerMenu = Menu::create(tap, tapBuffering, send, NULL);

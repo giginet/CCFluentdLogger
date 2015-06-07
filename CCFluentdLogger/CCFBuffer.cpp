@@ -15,7 +15,7 @@ bool Buffer::init()
     return true;
 }
 
-bool Buffer::addBuffer(Log * log)
+bool Buffer::addLog(Log * log)
 {
     _logs.pushBack(log);
     return true;

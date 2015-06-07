@@ -26,17 +26,40 @@ struct Configuration {
 };
 
 class Logger {
-public:
+CC_CONSTRUCTOR_ACCESS:
     Logger();
     virtual ~Logger();
+public:
+    /// Get default configuration struct.
     static Configuration getDefaultConfiguration();
+    
+    /// Get shared logger instance.
     static Logger * getInstance();
+    
+    /// Purge shared logger instance
     static void purgeLogger();
+    
+    /// Setter for configuration
     void setConfiguration(Configuration &config);
-    size_t postBuffer();
-    size_t getBufferdCount();
+    
+    /** Post log to server
+     *  @param Strings for tagging a log
+     *  @param Posting data in json11::Json::object
+     *  @param Boolean value which indicates to enable buffering or not. 
+     *         If not specified, Use config.isBufferingEnabled value.
+     *  @return true if the log is posted
+     */
     bool postLog(const char* tag, json11::Json obj);
     bool postLog(const char* tag, json11::Json obj, bool isBuffering);
+    
+    /** Post log to server
+     *  @return numbers of sent logs.
+     */
+    size_t postBuffered();
+    
+    /// Get number of buffered logs.
+    size_t getBufferdCount();
+    
 private:
     Configuration _configuration;
     static Logger * _instance;

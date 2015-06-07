@@ -21,9 +21,9 @@ class Buffer :public cocos2d::Ref {
 CC_CONSTRUCTOR_ACCESS:
     bool init();
 public:
-    bool addBuffer(Log *log);
-    void flush();
+    bool addLog(Log *log);
     void removeLog(Log * log);
+    void flush();
     CC_SYNTHESIZE_PASS_BY_REF(LogVector, _logs, Logs);
     CREATE_FUNC(Buffer);
 };
