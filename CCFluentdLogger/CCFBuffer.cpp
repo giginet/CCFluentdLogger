@@ -26,4 +26,9 @@ void Buffer::flush()
     _logs.clear();
 }
 
+void Buffer::removeLog(Log * log)
+{
+    _logs.eraseObject(log);
+}
+
 NS_LOGGER_END

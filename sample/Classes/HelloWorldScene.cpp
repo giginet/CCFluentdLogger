@@ -80,19 +80,26 @@ bool HelloWorld::init()
     auto logger = ccFluentdLogger::Logger::getInstance();
     logger->setConfiguration(config);
     
-    auto tap = MenuItemLabel::create(Label::createWithSystemFont("Add Tap Event",
+    auto tap = MenuItemLabel::create(Label::createWithSystemFont("Send Tap Event",
                                                                  "Helvetica",
                                                                  64),
                                      [this, logger](Ref * button) {
-                                         logger->registerLog("action", json11::Json::object {{"key", "value"}});
+                                         logger->registerLog("action", json11::Json::object {{"key", "value"}}, false);
                                      });
+    auto tapBuffering = MenuItemLabel::create(Label::createWithSystemFont("Add Tap Event",
+                                                                          "Helvetica",
+                                                                          64),
+                                              [this, logger](Ref * button) {
+                                                  logger->registerLog("action", json11::Json::object {{"key", "value"}});
+                                              });
     auto send = MenuItemLabel::create(Label::createWithSystemFont("Send buffered",
                                                                   "Helvetica",
                                                                   64),
                                       [this, logger](Ref * button) {
-                                          logger->postBuffer();
+                                          size_t num = logger->postBuffer();
+                                          cocos2d::log("Send %d buffered logs", (int)num);
                                       });
-    auto loggerMenu = Menu::create(tap, send, NULL);
+    auto loggerMenu = Menu::create(tap, tapBuffering, send, NULL);
     loggerMenu->setPosition(Vec2(visibleSize.width / 2.0, visibleSize.height / 2.0));
     loggerMenu->alignItemsVertically();
     this->addChild(loggerMenu);

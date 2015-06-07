@@ -60,10 +60,14 @@ void Logger::setConfiguration(ccFluentdLogger::Configuration &config)
 
 bool Logger::registerLog(const char *tag, json11::Json obj)
 {
+    return this->registerLog(tag, obj, _configuration.isBufferingEnabled);
+}
+
+bool Logger::registerLog(const char *tag, json11::Json obj, bool isBuffering)
+{
     Log *log = Log::create(tag, obj);
     _buffer->addBuffer(log);
-    
-    if (!_configuration.isBufferingEnabled) {
+    if (!isBuffering) {
         this->postBuffer();
     }
     return false;
@@ -99,10 +103,9 @@ void Logger::postLog(Log * log)
                     [this, log](cocos2d::network::HttpClient* client, cocos2d::network::HttpResponse* response) {
                         if (response->isSucceed()) {
                             cocos2d::log("Post succeed %s", log->dump().c_str());
-                            _buffer->getLogs().eraseObject(log);
+                            _buffer->removeLog(log);
                         } else {
                             cocos2d::log("Post failed %s", log->dump().c_str());
-                            _buffer->addBuffer(log);
                         }
                     });
 }

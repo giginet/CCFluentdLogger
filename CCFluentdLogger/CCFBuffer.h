@@ -23,7 +23,8 @@ CC_CONSTRUCTOR_ACCESS:
 public:
     bool addBuffer(Log *log);
     void flush();
-    CC_SYNTHESIZE(LogVector, _logs, Logs);
+    void removeLog(Log * log);
+    CC_SYNTHESIZE_PASS_BY_REF(LogVector, _logs, Logs);
     CREATE_FUNC(Buffer);
 };
 
