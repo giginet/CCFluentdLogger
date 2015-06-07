@@ -42,12 +42,14 @@ public:
     static void purgeLogger();
     void setConfiguration(Configuration &config);
     size_t postBuffer();
+    size_t getBufferdCount();
     bool registerLog(const char* tag, json11::Json obj);
 private:
     Configuration _configuration;
     static Logger * _instance;
     Connector * _connector;
     Buffer * _buffer;
+    void postLog(Log * log);
     Connector * getConnector();
 };
 

@@ -54,8 +54,7 @@ bool Logger::registerLog(const char *tag, json11::Json obj)
     if (_configuration.isBufferingEnabled) {
         _buffer->addBuffer(log);
     } else {
-        auto connector = this->getConnector();
-        connector->post(log);
+        this->postLog(log);
         return true;
     }
     return false;
@@ -63,13 +62,17 @@ bool Logger::registerLog(const char *tag, json11::Json obj)
 
 size_t Logger::postBuffer()
 {
-    auto connector = this->getConnector();
     size_t num = _buffer->getLogs().size();
     for (auto log : _buffer->getLogs()) {
-        connector->post(log);
+        this->postLog(log);
     }
     _buffer->flush();
     return num;
+}
+
+size_t Logger::getBufferdCount()
+{
+    return _buffer->getLogs().size();
 }
 
 Connector * Logger::getConnector()
@@ -79,6 +82,20 @@ Connector * Logger::getConnector()
         _connector->retain();
     }
     return _connector;
+}
+
+void Logger::postLog(Log * log)
+{
+    auto connector = this->getConnector();
+    connector->post(log,
+                    [this, log](cocos2d::network::HttpClient* client, cocos2d::network::HttpResponse* response) {
+                        if (response->isSucceed()) {
+                            cocos2d::log("Post succeed");
+                        } else {
+                            cocos2d::log("Post failed");
+                            _buffer->addBuffer(log);
+                        }
+                    });
 }
 
 NS_LOGGER_END

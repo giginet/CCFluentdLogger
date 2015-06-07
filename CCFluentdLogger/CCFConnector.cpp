@@ -7,7 +7,6 @@
 //
 
 #include "CCFConnector.h"
-#include "network/HttpClient.h"
 
 NS_LOGGER_BEGIN
 
@@ -40,7 +39,7 @@ bool Connector::init(const char *host, int port)
     return true;
 }
 
-bool Connector::post(ccFluentdLogger::Log *log)
+bool Connector::post(ccFluentdLogger::Log *log, const cocos2d::network::ccHttpRequestCallback &callback)
 {
     using namespace cocos2d::network;
     auto request = new HttpRequest();
@@ -49,14 +48,7 @@ bool Connector::post(ccFluentdLogger::Log *log)
     request->setRequestType(HttpRequest::Type::POST);
     auto dumped = log->dump().c_str();
     request->setRequestData(dumped, strlen(dumped));
-
-    request->setResponseCallback([this](HttpClient* client, HttpResponse* response){
-        if (response->isSucceed()) {
-            cocos2d::log("Succeed");
-        } else {
-            cocos2d::log("Failure");
-        }
-    });
+    request->setResponseCallback(callback);
     
     auto client = HttpClient::getInstance();
     client->enableCookies(NULL);

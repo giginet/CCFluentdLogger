@@ -8,6 +8,7 @@
 
 #include "CCFluentdMacros.h"
 #include "cocos2d.h"
+#include "network/HttpClient.h"
 
 #include "CCFLog.h"
 
@@ -27,7 +28,7 @@ private:
     std::string getEndPoint(const char* tag);
 public:
     static Connector* create(const char* host, int port);
-    bool post(Log* log);
+    bool post(Log* log, const cocos2d::network::ccHttpRequestCallback& callback);
 };
 
 NS_LOGGER_END
